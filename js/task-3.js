@@ -26,21 +26,90 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+//==================================================================
 
-const listElementRef = images.map(image => {
-  const galleryItemRef = document.createElement('li');
-  galleryItemRef.classList.add('gallery-list-item');
+// Варіант 1: створення розмітки через createElement
+// const galleryItems = images.map(image => {
+//   const galleryItemRef = document.createElement('li');
+//   galleryItemRef.classList.add('gallery-list-item');
 
-  const imageRef = document.createElement('img');
-  imageRef.src = image.url;
-  imageRef.alt = image.alt;
-  console.dir(imageRef);
+//   const imageRef = document.createElement('img');
+//   imageRef.src = image.url;
+//   imageRef.alt = image.alt;
 
-  galleryItemRef.append(imageRef);
-  console.log(galleryItemRef);
-  return galleryItemRef;
-});
+//   galleryItemRef.append(imageRef);
+//   return galleryItemRef;
+// });
 
+// const galeryListRef = document.querySelector('#gallery');
+// galeryListRef.append(...galleryItems);
+//==================================================================
+
+// Варіант 2: через функцію та createElement()
+// const createGalleryItem = image => {
+//   const galleryItemRef = document.createElement('li');
+//   galleryItemRef.classList.add('gallery-list-item');
+
+//   const imageRef = document.createElement('img');
+//   imageRef.src = image.url;
+//   imageRef.alt = image.alt;
+
+//   galleryItemRef.append(imageRef);
+//   return galleryItemRef;
+// };
+
+// const galleryItems = images.map(image => createGalleryItem(image));
+
+// const galeryListRef = document.querySelector('#gallery');
+// galeryListRef.append(...galleryItems);
+//==================================================================
+
+// Варіант 3: через шаблонні рядки та insertAdjacentHTML(),
+// кожен елемент додається в DOM окремо
+// const galeryListRef = document.querySelector('#gallery');
+
+// const createGalleryItem = image => {
+//   galeryListRef.insertAdjacentHTML(
+//     'beforeend',
+//     `<li class="gallery-list-item">
+//       <img src=${image.url} alt=${image.alt}>
+//     </li>`,
+//   );
+// };
+
+// const galleryItems = images.map(image => createGalleryItem(image));
+
+//==================================================================
+// Варіант 4: через шаблонні рядки та insertAdjacentHTML(),
+// всі елементи додаються в DOM за одну операцію
 const galeryListRef = document.querySelector('#gallery');
-galeryListRef.classList.add('gallery-list');
-galeryListRef.append(...listElementRef);
+
+const galleryItems = images.reduce(
+  (string, image) =>
+    string +
+    `<li class="gallery-list-item">
+    <img src=${image.url} alt=${image.alt}>
+    </li>`,
+  '',
+);
+
+galeryListRef.insertAdjacentHTML('afterbegin', galleryItems);
+
+//==================================================================
+// Варіант 5: створення розмітки винесено у функцію
+// const galeryListRef = document.querySelector('#gallery');
+
+// const createGalleryItem = image => {
+//   const galleryItem =
+//   `<li class="gallery-list-item">
+//   <img src=${image.url} alt=${image.alt}>
+//   </li>`;
+//   return galleryItem;
+// };
+
+// const galleryItems = images.reduce(
+//   (string, image) => string + createGalleryItem(image),
+//   '',
+// );
+
+// galeryListRef.insertAdjacentHTML('afterbegin', galleryItems);

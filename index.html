@@ -7,7 +7,7 @@
     <title>Homework 7</title>
   </head>
   <body>
-    <ul id="categories">
+    <!-- <ul id="categories">
       <li class="item">
         <h2>Тварини</h2>
 
@@ -43,13 +43,44 @@
     <ul id="ingredients"></ul>
     <ul id="gallery"></ul>
 
-    <!-- <script src="./js/task-1.js" type="module"></script> -->
+    <div id="counter">
+      <button type="button" data-action="decrement">-1</button>
+      <span id="value">0</span>
+      <button type="button" data-action="increment">+1</button>
+    </div>
+    <br />
+
+    <input type="text" placeholder="Ваше ім'я?" id="name-input" />
+    <h1>Привіт, <span id="name-output">незнайомець</span>!</h1>
+
+    <input
+      type="text"
+      id="validation-input"
+      data-length="6"
+      placeholder="Введи 6 символів"
+    />
+    <br />
+    <br />
+
+    <input id="font-size-control" type="range" />
+    <br />
+    <span id="text">Абракадабра!</span> 
+  <br>-->
+
+    <div id="controls">
+      <input type="number" min="0" max="100" step="1" />
+      <button type="button" data-action="render">Створити</button>
+      <button type="button" data-action="destroy">Очистити</button>
+    </div>
+
+    <div id="boxes"></div>
+    <!-- <script src="./js/task-1.js" type="module"></script>
     <script src="./js/task-2.js" type="module"></script>
     <script src="./js/task-3.js" type="module"></script>
-    <!-- <script src="./js/task-4.js" type="module"></script> -->
-    <!-- <script src="./js/task-5.js" type="module"></script> -->
-    <!-- <script src="./js/task-6.js" type="module"></script> -->
-    <!-- <script src="./js/task-7.js" type="module"></script> -->
-    <!-- <script src="./js/task-8.js" type="module"></script> -->
+    <script src="./js/task-4.js" type="module"></script>
+    <script src="./js/task-5.js" type="module"></script>
+    <script src="./js/task-6.js" type="module"></script>
+    <script src="./js/task-7.js" type="module"></script> -->
+    <script src="./js/task-8.js" type="module"></script>
   </body>
 </html>

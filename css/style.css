@@ -14,7 +14,7 @@ img {
   height: 200px;
 }
 
-.gallery-list {
+#gallery {
   display: flex;
   align-items: center;
 
@@ -24,4 +24,21 @@ img {
 
 .gallery-list-item {
   margin-right: 10px;
+}
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
+
+#boxes {
+  display: flex;
+  flex-wrap: wrap;
 }

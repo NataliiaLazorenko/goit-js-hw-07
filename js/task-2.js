@@ -15,6 +15,7 @@ const ingredients = [
   'Зелень',
   'Приправи',
 ];
+//==================================================================
 
 // варіант 1: з контейнером для елементів списку
 // const containerRef = document.createElement('div');
@@ -28,6 +29,7 @@ const ingredients = [
 
 // const ingredientsListRef = document.querySelector('#ingredients');
 // ingredientsListRef.append(containerRef);
+//==================================================================
 
 // варіант 2: без контейнера для елементів списку
 // const ingredientsList = ingredients.map(ingredient => {
@@ -39,6 +41,7 @@ const ingredients = [
 
 // const ingredientsListRef = document.querySelector('#ingredients');
 // ingredientsListRef.append(...ingredientsList);
+//==================================================================
 
 // варіант 3: через функцію і без контейнера для елементів списку
 const createIngredient = ingredient => {
