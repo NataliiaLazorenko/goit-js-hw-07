@@ -64,24 +64,7 @@ const images = [
 // galeryListRef.append(...galleryItems);
 //==================================================================
 
-// Варіант 3: через шаблонні рядки та insertAdjacentHTML(),
-// кожен елемент додається в DOM окремо
-// const galeryListRef = document.querySelector('#gallery');
-
-// const createGalleryItem = image => {
-//   galeryListRef.insertAdjacentHTML(
-//     'beforeend',
-//     `<li class="gallery-list-item">
-//       <img src=${image.url} alt=${image.alt}>
-//     </li>`,
-//   );
-// };
-
-// const galleryItems = images.map(image => createGalleryItem(image));
-
-//==================================================================
-// Варіант 4: через шаблонні рядки та insertAdjacentHTML(),
-// всі елементи додаються в DOM за одну операцію
+// Варіант 3: через шаблонні рядки та insertAdjacentHTML()
 const galeryListRef = document.querySelector('#gallery');
 
 const galleryItems = images.reduce(
@@ -94,9 +77,9 @@ const galleryItems = images.reduce(
 );
 
 galeryListRef.insertAdjacentHTML('afterbegin', galleryItems);
-
 //==================================================================
-// Варіант 5: створення розмітки винесено у функцію
+
+// Варіант 4: створення розмітки винесено у функцію
 // const galeryListRef = document.querySelector('#gallery');
 
 // const createGalleryItem = image => {

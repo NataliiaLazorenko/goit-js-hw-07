@@ -8,6 +8,7 @@
  
  * Для додавання стилів, використовуй CSS-класи valid і invalid.
  */
+//==================================================================
 
 // const inputRef = document.querySelector('#validation-input');
 
@@ -21,12 +22,12 @@
 //     ? inputRef.classList.add('valid')
 //     : inputRef.classList.add('invalid');
 // });
+//==================================================================
 
 // З використанням callback-функцій
 const inputRef = document.querySelector('#validation-input');
 
 inputRef.addEventListener('focus', onInputFocus);
-
 inputRef.addEventListener('blur', onInputBlur);
 
 function onInputFocus() {

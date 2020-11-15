@@ -3,6 +3,8 @@
  * (подія input), підставляє його поточне значення в span#name-output.
  * якщо інпут порожній, в спані повинен відображатися рядок 'незнайомець'.
  */
+//==================================================================
+
 const inputRef = document.querySelector('#name-input');
 const greetingTextRef = document.querySelector('#name-output');
 

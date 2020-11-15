@@ -7,38 +7,49 @@
  * Додай слухачі кліків на кнопки, виклики функцій та оновлення інтерфейсу
  */
 //==================================================================
-// const spanRef = document.querySelector('#value');
 
+// const htmlValue = document.querySelector('#value');
 // const btnDecrement = document.querySelector('button[data-action="decrement"]');
 // const btnIncrement = document.querySelector('button[data-action="increment"]');
 
 // btnDecrement.addEventListener('click', decrement);
 // btnIncrement.addEventListener('click', increment);
 
+// let counterValue = 0;
+
 // function decrement() {
-//   spanRef.textContent = Number(spanRef.textContent) - 1;
+//   counterValue -= 1;
+//   htmlValue.textContent = counterValue;
 // }
 
 // function increment() {
-//   spanRef.textContent = Number(spanRef.textContent) + 1;
+//   counterValue += 1;
+//   htmlValue.textContent = counterValue;
 // }
-
 //==================================================================
-const spanRef = document.querySelector('#value');
+
+// querySelector згруповані в об'єкт, оновлення інтерфейсу винесено у функцію
+const ref = {
+  htmlValue: document.querySelector('#value'),
+  btnDecrement: document.querySelector('button[data-action="decrement"]'),
+  btnIncrement: document.querySelector('button[data-action="increment"]'),
+};
+
+ref.btnDecrement.addEventListener('click', decrement);
+ref.btnIncrement.addEventListener('click', increment);
+
 let counterValue = 0;
-
-const btnDecrement = document.querySelector('button[data-action="decrement"]');
-const btnIncrement = document.querySelector('button[data-action="increment"]');
-
-btnDecrement.addEventListener('click', decrement);
-btnIncrement.addEventListener('click', increment);
 
 function decrement() {
   counterValue -= 1;
-  spanRef.textContent = counterValue;
+  render();
 }
 
 function increment() {
   counterValue += 1;
-  spanRef.textContent = counterValue;
+  render();
+}
+
+function render() {
+  ref.htmlValue.textContent = counterValue;
 }

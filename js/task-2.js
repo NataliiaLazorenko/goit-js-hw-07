@@ -16,22 +16,6 @@ const ingredients = [
   'Приправи',
 ];
 //==================================================================
-
-// варіант 1: з контейнером для елементів списку
-// const containerRef = document.createElement('div');
-
-// const ingredient = ingredients.forEach(ingredient => {
-//   const ingredientRef = document.createElement('li');
-//   ingredientRef.textContent = ingredient;
-
-//   containerRef.append(ingredientRef);
-// });
-
-// const ingredientsListRef = document.querySelector('#ingredients');
-// ingredientsListRef.append(containerRef);
-//==================================================================
-
-// варіант 2: без контейнера для елементів списку
 // const ingredientsList = ingredients.map(ingredient => {
 //   const ingredientRef = document.createElement('li');
 //   ingredientRef.textContent = ingredient;
@@ -43,7 +27,7 @@ const ingredients = [
 // ingredientsListRef.append(...ingredientsList);
 //==================================================================
 
-// варіант 3: через функцію і без контейнера для елементів списку
+// через функцію
 const createIngredient = ingredient => {
   const ingredientRef = document.createElement('li');
   ingredientRef.textContent = ingredient;
