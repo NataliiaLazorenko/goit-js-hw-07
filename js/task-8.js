@@ -70,32 +70,27 @@ const ref = {
 };
 
 ref.btnRender.addEventListener('click', () => {
-  const amount = Number(ref.form.value);
-  createBoxes(amount);
+  const boxesAmount = ref.form.value;
+  createBoxes(boxesAmount);
 });
 
 ref.btnDestroy.addEventListener('click', destroyBoxes);
 
-let boxWidth = 30;
-let boxHeight = 30;
+let boxSize = 30;
 
 function createBoxes(amount) {
   let newBoxes = [];
+
   for (let i = 0; i < amount; i += 1) {
     const box = document.createElement('div');
 
-    // генератор випадкового кольору
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-
-    box.style.backgroundColor = `#${randomColor}`;
-    box.style.width = `${boxWidth}px`;
-    box.style.height = `${boxHeight}px`;
+    box.style.backgroundColor = `#${generateColor()}`;
+    box.style.width = `${boxSize}px`;
+    box.style.height = `${boxSize}px`;
 
     // newBoxes.push(box);
     newBoxes[i] = box;
-
-    boxWidth += 10;
-    boxHeight += 10;
+    boxSize += 10;
   }
 
   ref.boxesContainer.append(...newBoxes);
@@ -106,6 +101,11 @@ function destroyBoxes() {
     ref.boxesContainer.removeChild(ref.boxesContainer.firstChild);
   }
 
-  boxWidth = 30;
-  boxHeight = 30;
+  boxSize = 30;
+}
+
+// генератор випадкового кольору
+function generateColor() {
+  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+  return randomColor;
 }
